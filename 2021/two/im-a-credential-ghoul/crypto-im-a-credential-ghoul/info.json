@@ -1,0 +1,7 @@
+{
+    "name": "Im a credential ghoul",
+    "description": "Scientists at the LIC are worried their key generation system is flawed. Can you log into their production systems to prove it?",
+    "topics": ["cryptography"],
+    "release": "2021-11-20T01:00:00Z",
+    "points": 300
+}

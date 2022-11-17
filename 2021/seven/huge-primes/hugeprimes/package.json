@@ -1,0 +1,15 @@
+{
+  "name": "hugeprimes",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "Isaac Semaya <isemaya@squareup.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6"
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LIC Onboarding</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Accessing the LIC Production Environment</h1>
+<p>If you are a scientist conducting research or analysing experiment results,
+you'll require access to the production environment here at the LIC. Access to
+the production environment is via SSH.</p>
+
+<p>Since the production systems house our most sensitive data, password
+authentication is disabled. The only form of authentication enabled is
+key-based.</p>
+
+<p>In the past, the LIC has experienced a breach by way of insecure ssh key
+pair generation. Therefore, we have developed a state-of-the-art RSA key pair
+generation system. The system is completely offline and "air gapped." In order
+to prevent persistent malware or other attacks, we've based our system on a
+microcontroller with no multi-user operating system. This reduces the risk of
+accidentally installing malicious packages that could steal private keys or
+backdoor the generation of keys. This custom system boots into a known-good
+state each time it performs a key-pair generation. If an attacker does somehow
+gain access, they will be unable to persist on the device.</p>
+
+<ol>
+    <li>First, locate the key generation kiosk near the reception desk on the main floor.</li>
+    <li>Next, press the large metallic button under the lcd screen.</li>
+    <li>The system boots up into a known-good state. When the boot sequence is complete, it will prompt you to scan your badge.</li>
+    <li>Place your badge on the RFID reader (Gray square with the red light in the corner).</li>
+    <li>The system displays your user name on the lcd display. Verify it is correct.</li>
+    <li>If your details are correct, press the metallic button once more.</li>
+    <li>The system displays a progress bar while it is generating your key pair.</li>
+    <li>If successful, the display will indicate it has completed. Press the metallic button one last time to shutdown the system so that it is ready for the next user.</li>
+</ol>
+
+<p>The system is connected to the production environment via a serial
+connection to a production host. The key generator securely sends your public
+key to the production systems. The system has a secondary serial connection
+to a host on the workstation network. Your private key will be placed on your
+workstation with the correct permissions to ensure it is not accidentally
+disclosed.</p>
+
+<p>Please test your access. The machine hosting this documentation gets a copy
+of your public key and places it <a href='pubkeys/'>here</a>. It has the same
+name as your username (only with a .pub extension).</p>
+
+<p>There is also an ssh server running on this host on port 2222. To ensure
+your private key was generated and placed correctly, you should ssh to this
+machine on that port from your workstation using your key.</p>
+</body>
+</html>
